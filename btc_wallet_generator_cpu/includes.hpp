@@ -1,7 +1,7 @@
 #pragma once
 
-#ifndef INCLUDES_H
-#define INCLUDES_H
+#ifndef INCLUDES_HPP
+#define INCLUDES_HPP
 
 #include <iostream>
 #include <vector>
@@ -18,4 +18,4 @@
 #include <openssl/sha.h>
 #include <openssl/ripemd.h>
 
-#endif // !INCLUDES_H
+#endif // !INCLUDES_HPP

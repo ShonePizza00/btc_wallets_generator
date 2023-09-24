@@ -27,28 +27,22 @@
     <ClCompile Include="ecdsa\ecdsa.cpp">
       <Filter>Исходные файлы\ecdsa</Filter>
     </ClCompile>
-    <ClCompile Include="sha256\SHA256.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="core.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="core.h">
+    <ClInclude Include="core.hpp">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="includes.h">
+    <ClInclude Include="includes.hpp">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="ecdsa\ecdsa.h">
+    <ClInclude Include="ecdsa\ecdsa.hpp">
       <Filter>Файлы заголовков\ecdsa</Filter>
     </ClInclude>
     <ClInclude Include="ecdsa\secp256k1.h">
       <Filter>Файлы заголовков\ecdsa</Filter>
-    </ClInclude>
-    <ClInclude Include="sha256\SHA256.h">
-      <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

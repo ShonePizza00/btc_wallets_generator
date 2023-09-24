@@ -1,4 +1,4 @@
-#include "ecdsa.h"
+#include "ecdsa.hpp"
 
 namespace ecdsa
 {

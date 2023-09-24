@@ -1,8 +1,8 @@
 #pragma once
-#ifndef ECDSA_H
-#define ECDSA_H
+#ifndef ECDSA_HPP
+#define ECDSA_HPP
 
-#include "../includes.h"
+#include "../includes.hpp"
 #include "secp256k1.h"
 
 #define PUBLIC_KEY_SIZE 65
@@ -30,4 +30,4 @@ namespace ecdsa
 	};
 }
 
-#endif // !ECDSA_H
+#endif // !ECDSA_HPP

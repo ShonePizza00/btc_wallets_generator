@@ -145,14 +145,12 @@
     <ClCompile Include="core.cpp" />
     <ClCompile Include="ecdsa\ecdsa.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="sha256\SHA256.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="core.h" />
-    <ClInclude Include="ecdsa\ecdsa.h" />
+    <ClInclude Include="core.hpp" />
+    <ClInclude Include="ecdsa\ecdsa.hpp" />
     <ClInclude Include="ecdsa\secp256k1.h" />
-    <ClInclude Include="includes.h" />
-    <ClInclude Include="sha256\SHA256.h" />
+    <ClInclude Include="includes.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
