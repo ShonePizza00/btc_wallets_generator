@@ -11,6 +11,15 @@ namespace core
 		}
 	}
 
+	void HEX(std::vector<uint8_t>&& digits, std::vector<char>& dest)
+	{
+		for (uint8_t digit : digits)
+		{
+			dest.push_back(hex_digits[(digit & 0xf0) >> 4]);
+			dest.push_back(hex_digits[(digit & 0x0f)]);
+		}
+	}
+
 	void fromHEX(std::vector<char>& hex, std::vector<uint8_t>& dest)
 	{
 		for (int i = 0; i < hex.size(); i += 2)
@@ -37,16 +46,29 @@ namespace core
 		source.erase(source.begin(), source.begin() + lastIndex);
 	}
 
+	/*inline void dumpWallet(
+		std::vector<uint8_t>& bitcoinWallet,
+		std::vector<char>& privateKey,
+		std::ofstream& file)
+	*/
+
 	namespace BlockChainParser
 	{
 		using namespace curlpp::options;
 		void getHTML(std::string& bitcoin_wallet, std::stringstream& response)
 		{
-			curlpp::Cleanup myCleanUp;
-			curlpp::Easy myRequest;
-			myRequest.setOpt<Url>(BLOCKCHAIN_DOMAIN + bitcoin_wallet);
-			myRequest.setOpt(new WriteStream(&response));
-			myRequest.perform();
+			try
+			{
+				curlpp::Cleanup myCleanUp;
+				curlpp::Easy myRequest;
+				myRequest.setOpt<Url>(BLOCKCHAIN_DOMAIN + bitcoin_wallet);
+				myRequest.setOpt(new WriteStream(&response));
+				myRequest.perform();
+			}
+			catch (const std::exception& ex)
+			{
+				std::cout << ex.what() << std::endl;
+			}
 		}
 	}
 

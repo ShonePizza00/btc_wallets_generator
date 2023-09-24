@@ -10,6 +10,8 @@
 #include <sstream>
 #include <stdlib.h>
 #include <stdio.h>
+#include <thread>
+#include <mutex>
 
 #include <openssl/ec.h>
 #include <openssl/obj_mac.h>

@@ -37,9 +37,25 @@ namespace core
 	const char base58chars[] = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz";
 
 	void HEX(std::vector<uint8_t>& digits, std::vector<char>& dest);
+	void HEX(std::vector<uint8_t>&& digits, std::vector<char>& dest);
 	void fromHEX(std::vector<char>& hex, std::vector<uint8_t>& dest);
 
 	void lstrip(const char symbol, std::vector<uint8_t>& source);
+
+	inline void dumpWallet(
+		std::vector<uint8_t>& bitcoinWallet,
+		std::vector<char>& privateKey,
+		std::ofstream& file)
+	{
+		const char semicol[] = { ':' };
+		const char newline[] = { '\n' };
+
+		file.write((char*)(&bitcoinWallet.front()), bitcoinWallet.size());
+		file.write(semicol, 1);
+		file.write(&privateKey.front(), privateKey.size());
+		file.write(newline, 1);
+		file.flush();
+	}
 
 	namespace BlockChainParser
 	{
