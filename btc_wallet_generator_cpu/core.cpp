@@ -55,7 +55,7 @@ namespace core
 	namespace BlockChainParser
 	{
 		using namespace curlpp::options;
-		void getHTML(std::string& bitcoin_wallet, std::stringstream& response)
+		bool getHTML(std::string& bitcoin_wallet, std::stringstream& response)
 		{
 			try
 			{
@@ -68,7 +68,9 @@ namespace core
 			catch (const std::exception& ex)
 			{
 				std::cout << ex.what() << std::endl;
+				return false;
 			}
+			return true;
 		}
 	}
 

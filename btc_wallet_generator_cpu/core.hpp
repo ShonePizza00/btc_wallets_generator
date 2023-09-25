@@ -47,19 +47,16 @@ namespace core
 		std::vector<char>& privateKey,
 		std::ofstream& file)
 	{
-		const char semicol[] = { ':' };
-		const char newline[] = { '\n' };
-
 		file.write((char*)(&bitcoinWallet.front()), bitcoinWallet.size());
-		file.write(semicol, 1);
+		file.write(";", 1);
 		file.write(&privateKey.front(), privateKey.size());
-		file.write(newline, 1);
+		file.write("\n", 1);
 		file.flush();
 	}
 
 	namespace BlockChainParser
 	{
-		void getHTML(std::string& bitcoin_wallet, std::stringstream& response);
+		bool getHTML(std::string& bitcoin_wallet, std::stringstream& response);
 	}
 
 	namespace holder

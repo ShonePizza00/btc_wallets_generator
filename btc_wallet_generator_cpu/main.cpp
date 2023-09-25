@@ -39,7 +39,7 @@ void walletCalculate(std::vector<uint8_t>&& HASHES)
 	std::string wallet(bitcoinWallet.begin(), bitcoinWallet.end());
 	std::stringstream ss;
 	//std::cout << "balance: ";
-	core::BlockChainParser::getHTML(wallet, ss);
+	while (!core::BlockChainParser::getHTML(wallet, ss));
 	size_t balance;
 	try
 	{
