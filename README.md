@@ -1,6 +1,6 @@
 # btc_wallets_generator
 Generates bitcoin wallets and verifies them on blockchain.com in multi-threading mode.
-Сurrently can generate wallets only on CPUю
+Сurrently can generate wallets only on CPU.
 
 ## Building
 Windows:
